@@ -1,0 +1,54 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication4;
+
+/**
+ *
+ * @author Hayabusa
+ */
+public class JavaApplication4 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+          Car a=new Car("Honda",1500,"black",5);
+          System.out.println(" name:"+a.getname()+"\n weight"+a.getweight()+"kg"+"\n color:"+a.getcolor()+"\n pssenger:"+a.getpassenger());
+    }
+    
+}
+ class Car
+ {
+     private String Name;
+     private double weight;
+     private String color;
+     private int passenger;
+     
+     public Car(String n,double w,String c,int p)
+     {
+         Name=n;
+         weight=w;
+         color=c;
+         passenger=p;
+     }
+     public String getname()
+     {
+         return Name;
+     }
+     public double getweight()
+     {
+         return weight;
+     }
+     public String getcolor()
+     {
+         return color;
+       
+     }
+     public int getpassenger()
+     {
+         return passenger;
+     }
+ }
