@@ -1,0 +1,56 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package rc4;
+import java.lang.Integer.*;
+/**
+ *
+ * @author Hayabusa
+ */
+public class RC4 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        int[] s=new int[256];
+        for(int i=0;i<=255;i++)
+            s[i]=i;                    //初始化s数组，为0~256
+        int [] k=new int[256];
+        int [] t={'a','b','c','d','e'};
+        int [] z=new int[256];
+        int [] m={'X','i','d','i','a','n',' ','U','n','i','v','e','r','s','i','t','y'} ;   
+        int [] f= new int[256];
+        int a=0,b,x=0;
+        for(b=0;a<=255;a++)
+        {   b=a%5;
+            k[a]=t[b];
+        }
+        for(a=0;a<=255;a++)
+        {
+            b=(b+s[a]+k[a])%256;
+            int temp=s[a];
+            s[a]=s[b];
+            s[b]=temp;         
+        }   
+          int p=0,q=0;                                  //生成了s序列；
+          for(p=0;p<=16;p++)
+          {
+              a=(a+1)%256;
+              b=(b+s[a])%256;
+              int tem=s[a];
+              s[a]=s[b];
+              s[b]=tem;
+              q=(s[a]+s[b])%256;
+              f[p]=m[p]^z[q];
+          }
+       
+      
+        for(int element :f)
+           System.out.println(element);  
+    }
+    
+}
